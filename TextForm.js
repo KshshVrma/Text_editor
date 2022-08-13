@@ -15,6 +15,12 @@ export default function Thisfun(props) {
     setText(newText)
 
   }
+  const handledelClick=()=>{
+    console.log("clear clicked->"+text)
+    let newText='';
+    setText(newText)
+
+  }
   const handleOnChange=(event)=>{
     console.log("on change")
     setText(event.target.value)
@@ -31,11 +37,12 @@ export default function Thisfun(props) {
     </div>
  <button className="btn btn-primary mx-2" onClick={handleupClick}>convert to uppercase</button>
  <button className="btn btn-secondary" onClick={handleloClick}>convert to lowercase</button>
+ <button className="btn btn-warning" onClick={handledelClick}>clear</button>
         </div>
         <div className="container" my-3>
-          <h1>YOur text summary</h1>
-          <p>{text.split(" ").length-1}words and  {text.length} characters</p>
-        <p>{0.008*text.split(" ").length}Minutes read</p>
+          <h1>Your text summary</h1>
+          <p>{text.split(" ").length-1} words and  {text.length} characters</p>
+        <p>{0.008*text.split(" ").length}-Minute(s) read</p>
         <p>{text}</p>
         </div>
         </>
