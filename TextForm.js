@@ -21,6 +21,12 @@ export default function Thisfun(props) {
     setText(newText)
 
   }
+  const extraSpace=()=>{
+    console.log("clear clicked->"+text)
+    let newText=text.split(/[ ]+/);
+    setText(newText.join(" "))
+
+  }
   const handleOnChange=(event)=>{
     console.log("on change")
     setText(event.target.value)
@@ -37,13 +43,14 @@ export default function Thisfun(props) {
     </div>
  <button className="btn btn-primary mx-2" onClick={handleupClick}>convert to uppercase</button>
  <button className="btn btn-secondary mx-2" onClick={handleloClick}>convert to lowercase</button>
- <button className="btn btn-warning" onClick={handledelClick}>clear</button>
+ <button className="btn btn-warning mx-2" onClick={handledelClick}>clear</button>
+ <button className="btn btn-danger mx-2" onClick={extraSpace}>Remove extra space</button>
         </div>
         <div className="container" my-3>
           <h1>Your text summary</h1>
           <p>{text.split(" ").length-1} words and  {text.length} characters</p>
         <p>{0.008*text.split(" ").length}-Minute(s) read</p>
-        <h2>Preview<h2>
+        <h2>Preview</h2>
         <p>{text}</p>
         </div>
         </>
